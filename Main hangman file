@@ -1,0 +1,26 @@
+hangmanword = input("player create a word:")
+B = int(input("how many lives player 2 gets:"))
+lives = B
+guessed = False
+guessedLetters = []
+while not guessed:
+    Q = input("guess a letter:")
+    inWord = False
+    for i in range(0,len(hangmanword)):
+        if lives <= 1:
+            print("Gameover")
+            print("Player 1 wins!")
+            guessed = True
+            break
+        if(hangmanword[i] == Q):
+            print(Q, end=" ")
+            guessedLetters.append(Q)
+            inWord = True
+            if len(guessedLetters) == len(hangmanword):
+                guessed = True
+                break
+            continue
+        elif(hangmanword[i] in guessedLetters):
+            print(hangmanword[i], end=" ")
+            continue
+        else:
