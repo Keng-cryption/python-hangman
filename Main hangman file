@@ -24,3 +24,10 @@ while not guessed:
             print(hangmanword[i], end=" ")
             continue
         else:
+            print("_", end=" ")
+    print()
+    if not inWord:
+        lives = lives - 1
+    print(lives)
+if guessed:
+    print("Player 2 Wins!")
